@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="civ7-rest-guard" version="5" xmlns="ModInfo">
+  <Properties>
+    <Name>休息一下 · Rest Guard</Name>
+    <Description>按回合或连续游戏时间强制休息，可独立开启。默认每20回合换档（5/4/3/2/1），连续游戏25分钟休息5分钟；无操作5分钟视为休息。任意休息后共同重置。右上角图标显示剩余回合与时间。仅单人游戏。</Description>
+    <Authors>Custom Mod</Authors>
+    <Version>1.3.0</Version>
+    <Package>Mod</Package>
+    <AffectsSavedGames>0</AffectsSavedGames>
+  </Properties>
+  <Dependencies><Mod id="base-standard" title="Base Game" /></Dependencies>
+  <ActionCriteria><Criteria id="always"><AlwaysMet /></Criteria></ActionCriteria>
+  <ActionGroups>
+    <ActionGroup id="rest-guard-game" scope="game" criteria="always">
+      <Properties><LoadOrder>2000</LoadOrder></Properties>
+      <Actions>
+        <UIScripts><Item>ui/rest-guard.js</Item></UIScripts>
+        <ImportFiles>
+          <Item>ui/defaults.js</Item>
+          <Item>ui/rest-model.js</Item>
+          <Item>ui/rest-session.js</Item>
+          <Item>ui/rest-runtime.js</Item>
+          <Item>ui/rest-store.js</Item>
+          <Item>ui/rest-view.js</Item>
+          <Item>ui/rest-guard.css</Item>
+        </ImportFiles>
+      </Actions>
+    </ActionGroup>
+    <ActionGroup id="rest-guard-shell" scope="shell" criteria="always">
+      <Properties><LoadOrder>2000</LoadOrder></Properties>
+      <Actions>
+        <UIScripts><Item>ui/rest-shell.js</Item></UIScripts>
+        <ImportFiles>
+          <Item>ui/defaults.js</Item>
+          <Item>ui/rest-model.js</Item>
+          <Item>ui/rest-session.js</Item>
+          <Item>ui/rest-runtime.js</Item>
+          <Item>ui/rest-store.js</Item>
+        </ImportFiles>
+      </Actions>
+    </ActionGroup>
+  </ActionGroups>
+</Mod>
+
